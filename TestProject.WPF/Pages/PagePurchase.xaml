@@ -1,0 +1,43 @@
+﻿<Page x:Class="TestProject.WPF.Pages.PagePurchase"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"c:\users\nik-801\source\repos\testproject\testproject.wpf\pages\pagepurchase.xaml
+c:\users\nik-801\source\repos\testproject\testproject.wpf\pages\pagepurchase.xaml.cs
+
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestProject.WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Добавление покупки">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Категория"/>
+                <ComboBox x:Name="cbCategory" SelectedItem="{Binding Category}" DisplayMemberPath="Name"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Назначение платежа"/>
+                <TextBox x:Name="tbName" Text="{Binding Name}" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Количество"/>
+                <TextBox x:Name="tbCount" Text="{Binding Count}" Height="30" Width="50"/>
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="btnUp" Content="+" Margin="5" Height="15"/>
+                    <Button x:Name="btnDown" Content="-" Margin="5" Height="15"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Цена"/>
+                <TextBox x:Name="tbPrice" Text="{Binding Price}" Width="100"/>
+                <Label Content="р."/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click"/>
+                <Button x:Name="btnClose" Content="Отменить" Click="btnClose_Click"/>
+                <Button x:Name="btnDelete" Content="Удалить" Visibility="Collapsed" Click="btnDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
