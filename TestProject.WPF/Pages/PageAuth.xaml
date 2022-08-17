@@ -11,21 +11,7 @@
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Orientation="Horizontal">
             <Label Content="Имя пользователя"/>
-            <ComboBox x:Name="cbUsers">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock>
-                            <TextBlock.Text>
-                                <MultiBinding>
-                                    <Binding Path="LastName"/>
-                                    <Binding Path="FirstName"/>
-                                    <Binding Path="MiddleName" TargetNullValue=""/>
-                                </MultiBinding>
-                            </TextBlock.Text>
-                        </TextBlock>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+            <ComboBox x:Name="cbUsers" DisplayMemberPath="Login" SelectedItem="{Binding User}" Width="150"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Пароль"/>

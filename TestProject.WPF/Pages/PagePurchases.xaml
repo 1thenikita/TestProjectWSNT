@@ -17,11 +17,11 @@
             <Button x:Name="btnAdd" Content="+" Click="btnAdd_Click" Width="30"/>
             <Button x:Name="btnDelete" Content="-" Click="btnDelete_Click" Width="30"/>
             <Label Content="С"/>
-            <DatePickerTextBox x:Name="dpStart" SelectionChanged="dpStart_SelectionChanged"/>
+            <DatePicker x:Name="dpStart"/>
             <Label Content="по"/>
-            <DatePickerTextBox x:Name="dpEnd"/>
+            <DatePicker x:Name="dpEnd"/>
             <Label Content="Категория:"/>
-            <ComboBox x:Name="cbCategory" DisplayMemberPath="Name" SelectedItem="{Binding Category}" SelectionChanged="cbCategory_SelectionChanged"/>
+            <ComboBox x:Name="cbCategory" DisplayMemberPath="Name" SelectedItem="{Binding Category}"/>
             <Button x:Name="btnSelect" Content="Выбрать" Click="btnSelect_Click"/>
             <Button x:Name="btnClear" Content="Очистить" Click="btnClear_Click"/>
             <Button x:Name="btnReport" Content="Отчёт" Click="btnReport_Click"/>

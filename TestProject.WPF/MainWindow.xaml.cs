@@ -29,6 +29,15 @@ namespace TestProject.WPF
         {
             InitializeComponent();
             Global.FrameMain = frmMain;
+            try
+            {
+                Global.DB = new Entities.DBEntities();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show($@"Работа программы невозможна!\nПроверьте подключение к БД!\n{e.Message}", "Критическая ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+            }
             Global.FrameMain.Navigate(new PageAuth());
         }
 
