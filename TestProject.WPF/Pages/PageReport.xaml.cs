@@ -27,10 +27,17 @@ namespace TestProject.WPF.Pages
         {
             InitializeComponent();
             Title = "Список платежей";
+            GeneratePage();
         }
 
         private void GeneratePage()
         {
+            var labelText = new Label();
+            labelText.Content = "Список платежей";
+            labelText.HorizontalAlignment = HorizontalAlignment.Center;
+            labelText.FontSize = 18;
+
+            spMain.Children.Add(labelText);
             var total = 0.0;
             foreach(var category in Global.DB.Categories.ToList())
             {
@@ -56,11 +63,18 @@ namespace TestProject.WPF.Pages
                 this.spMain.Children.Add(sp);
             }
 
+            var button = new Button();
+            button.Width = 5;
+            button.Height = 100;
+
             var spTotal = new StackPanel();
             spTotal.Orientation = Orientation.Horizontal;
+
+
+
             var labelTotalText = new Label();
             labelTotalText.Content = "ИТОГО: ";
-
+            labelTotalText.FontSize = 18;
             var labelTotalPrice = new Label();
             labelTotalPrice.Content = total + " р.";
 

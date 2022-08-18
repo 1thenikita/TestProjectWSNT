@@ -77,6 +77,9 @@ namespace TestProject.WPF.Pages
                 Title = "Изменение покупки";
                 Global.DB.Purchases.Add(_purchase);
             }
+
+            _purchase.Total = _purchase.Count * _purchase.Price;
+            _purchase.Date = DateTime.Now.Date;
             Global.DB.SaveChanges();
         }
 
